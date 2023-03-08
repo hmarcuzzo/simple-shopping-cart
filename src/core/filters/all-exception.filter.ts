@@ -16,7 +16,7 @@ import {
   EntityNotFoundError,
   QueryFailedError,
 } from 'typeorm';
-import { ExceptionResponseDto } from 'src/core/common/dto/base-exception-response.dto';
+import { ExceptionResponseDto } from '../common/dto/base-exception-response.dto';
 
 @Catch()
 export class AllExceptionFilter implements ExceptionFilter {

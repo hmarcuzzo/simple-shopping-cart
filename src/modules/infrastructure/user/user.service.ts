@@ -3,7 +3,7 @@ import { UserRepository } from './user.repository';
 import { UserQueryDto } from './dto/user-query.dto';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
-import { EntityManager, FindConditions } from 'typeorm';
+import { FindConditions } from 'typeorm';
 import { UpdateResult } from 'typeorm/query-builder/result/UpdateResult';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { generateHash } from '../../../core/utils/hash.utils';
@@ -20,17 +20,7 @@ export class UserService {
     return await this.userRepository.findOneOrFail(findData);
   }
 
-  // async findOneUsuarioById(findData: Uuid): Promise<User> {
-  //   return await this.userRepository.findOneOrFail(findData, {
-  //     relations: ['setor'],
-  //   });
-  // }
-
-  async updateUser(
-    id: Uuid,
-    userDto: UpdateUserDto,
-    manager?: EntityManager,
-  ): Promise<UpdateResult> {
+  async updateUser(id: Uuid, userDto: UpdateUserDto): Promise<UpdateResult> {
     if (userDto.login) {
       const user = await this.findOneUser({ login: userDto.login });
       if (user && user.id !== id) {
@@ -42,18 +32,11 @@ export class UserService {
       userDto.password = generateHash(userDto.password);
     }
 
-    return manager
-      ? await manager.update(User, id, userDto)
-      : await this.userRepository.update(id, userDto);
+    return await this.userRepository.update(id, userDto);
   }
 
-  async createUser(
-    userDto: CreateUserDto,
-    manager?: EntityManager,
-  ): Promise<User> {
+  async createUser(userDto: CreateUserDto): Promise<User> {
     const user = this.userRepository.create(userDto);
-    return manager
-      ? await manager.save(user)
-      : await this.userRepository.save(user);
+    return await this.userRepository.save(user);
   }
 }

@@ -3,8 +3,8 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import type { Constructor } from 'src/core/types/_internal';
 import { BaseDto } from './dto/base.dto';
+import { Constructor } from '../types/_internal';
 
 export interface IBaseEntity<DTO extends BaseDto, O = never> {
   id: Uuid;

@@ -6,8 +6,8 @@ import { AuthController } from 'src/modules/infrastructure/auth/auth.controller'
 import { AuthInterface } from 'src/modules/infrastructure/auth/auth.interface';
 import { AuthService } from 'src/modules/infrastructure/auth/auth.service';
 import { JwtStrategy } from 'src/modules/infrastructure/auth/jwt.strategy';
-import { PublicStrategy } from 'src/modules/infrastructure/auth/public.strategy';
 import { UserModule } from '../user/user.module';
+
 dotenv.config();
 
 @Module({
@@ -20,7 +20,7 @@ dotenv.config();
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy, PublicStrategy, AuthInterface],
+  providers: [AuthService, JwtStrategy, AuthInterface],
   exports: [JwtModule, AuthInterface],
 })
 export class AuthModule {}

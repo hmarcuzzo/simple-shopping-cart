@@ -21,6 +21,8 @@
     "@nestjs/core": "8.0.0",
     "@nestjs/jwt": "^10.0.2",
     "@nestjs/mapped-types": "^1.2.2",
+    "@nestjs/microservices": "^9.3.9",
+    "@nestjs/mongoose": "^9.2.1",
     "@nestjs/passport": "^9.0.3",
     "@nestjs/platform-express": "8.0.0",
     "@nestjs/swagger": "^6.2.1",
@@ -30,6 +32,7 @@
     "chalk": "2.4.1",
     "express": "^4.18.2",
     "joi": "^17.8.3",
+    "mongoose": "^7.0.1",
     "nest": "^0.1.6",
     "nestjs": "^0.0.1",
     "nestjs-joi": "^1.9.0",
@@ -40,7 +43,8 @@
     "rxjs": "^7.8.0",
     "source-map-support": "^0.5.21",
     "typeorm": "0.2.41",
-    "typeorm-naming-strategies": "^4.1.0"
+    "typeorm-naming-strategies": "^4.1.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.54.1",

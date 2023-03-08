@@ -1,4 +1,4 @@
-import type { BaseEntity } from 'src/core/common/base.entity';
+import { BaseEntity } from '../base.entity';
 
 export interface BaseDtoOptions {
   excludeFields?: boolean;

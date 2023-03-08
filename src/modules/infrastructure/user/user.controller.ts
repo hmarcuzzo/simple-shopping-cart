@@ -46,7 +46,7 @@ export class UserController {
   }
 
   @Post('/create')
-  async createUserAdmin(
+  async createUser(
     @Body(new JoiPipe({ group: 'CREATE' }))
     createUserDto: CreateUserDto,
   ): Promise<User> {

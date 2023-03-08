@@ -5,7 +5,6 @@ import {
   HttpCode,
   HttpStatus,
   Post,
-  UseGuards,
 } from '@nestjs/common';
 import { AuthService } from 'src/modules/infrastructure/auth/auth.service';
 import { LoginPayloadDto } from 'src/modules/infrastructure/auth/dto/login-payload.dto';
@@ -15,7 +14,6 @@ import { Auth } from '../../../core/decorators/http.decorators';
 import { AuthUser } from '../../../core/decorators/auth-user.decorator';
 import { User } from '../user/entities/user.entity';
 import { ApiTags } from '@nestjs/swagger';
-import { AuthMiddleware } from '../../../core/middlewares/auth.middleware';
 
 @ApiTags('Auth')
 @Controller('auth')

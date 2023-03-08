@@ -9,23 +9,4 @@ export class UserInterface {
   async findOneUser(findData: FindConditions<User>): Promise<User> {
     return this.userService.findOneUser(findData);
   }
-  //
-  // async updateLastAccess(id: Uuid) {
-  //   return await this.userService.updateLastAccess(id);
-  // }
-  //
-  // async createUsuario(
-  //   usuarioDto: CreateUsuarioDto,
-  //   manager?: EntityManager,
-  // ): Promise<Usuario> {
-  //   return await this.userService.createUsuario(usuarioDto, manager);
-  // }
-  //
-  // async updateUsuario(
-  //   id: Uuid,
-  //   usuarioDto: UpdateUsuarioDto,
-  //   manager?: EntityManager
-  // ) {
-  //   return await this.userService.updateUsuario(id, usuarioDto, manager)
-  // }
 }
