@@ -2,8 +2,9 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import * as dotenv from 'dotenv';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
-import { DatabaseService } from './database.service';
+import { PostgresDatabaseService } from './postgres_database.service';
 import * as process from 'process';
+
 dotenv.config();
 
 @Module({
@@ -22,9 +23,10 @@ dotenv.config();
       autoLoadEntities: true,
       synchronize: process.env.TYPEORM_SYNCHRONIZE === 'true',
       namingStrategy: new SnakeNamingStrategy(),
+      keepConnectionAlive: true,
     }),
   ],
-  providers: [DatabaseService],
-  exports: [DatabaseService],
+  providers: [PostgresDatabaseService],
+  exports: [PostgresDatabaseService],
 })
-export class DatabaseModule {}
+export class PostgresDatabaseModule {}
