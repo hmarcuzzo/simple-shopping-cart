@@ -8,7 +8,7 @@ async function bootstrap() {
     .setTitle('Simple Shopping Cart')
     .setDescription(
       'The goal of this testing project is to ensure the proper functioning of a web-based shopping cart that allows ' +
-        'users to add, remove, and purchase products from a catalog.',
+        'users to add and remove products from a catalog.',
     )
     .setVersion('v0.0.1')
     .build();
