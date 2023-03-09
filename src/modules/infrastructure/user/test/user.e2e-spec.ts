@@ -107,4 +107,8 @@ describe('User (e2e)', () => {
         .expect(400);
     });
   });
+
+  afterAll(async () => {
+    await app.close();
+  });
 });

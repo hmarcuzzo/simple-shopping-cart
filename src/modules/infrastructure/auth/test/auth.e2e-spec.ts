@@ -72,4 +72,8 @@ describe('Auth (e2e)', () => {
       expect(response.body).toEqual(user);
     });
   });
+
+  afterAll(async () => {
+    await app.close();
+  });
 });

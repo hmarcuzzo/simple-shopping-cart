@@ -18,7 +18,7 @@ export class ShoppingCartController {
 
   @Auth()
   @Get('/user-cart/get')
-  async findOne(@AuthUser() user: User): Promise<ShoppingCartDto> {
+  async findUserCart(@AuthUser() user: User): Promise<ShoppingCartDto> {
     return await this.shoppingCartService.findOneShoppingCart(user.id);
   }
 
@@ -37,7 +37,7 @@ export class ShoppingCartController {
 
   @Auth()
   @Delete('/product/delete')
-  async remove(
+  async removeProduct(
     @Body(new JoiPipe({ group: 'DELETE' }))
     removeProductDto: RemoveProductDto,
     @AuthUser() user: User,
